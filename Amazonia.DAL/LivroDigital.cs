@@ -5,5 +5,9 @@ namespace Amazonia.DAL{
         public string FormatoFicheiro { get; set; } // PDF, DOC, EPUB
         public string InformacoesLicensa { get; set; }
 
+        public override decimal ObterPreco(){
+            return base.ObterPreco() * 0.9M;
+        }
+
     }
 }
