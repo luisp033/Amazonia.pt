@@ -1,4 +1,4 @@
-namespace Amazonia.DAL{
+namespace Amazonia.DAL.Entidades{
     public class LivroDigital : Livro
     {
         public int TamanhoEmMB { get; set; }

@@ -1,7 +1,6 @@
-namespace Amazonia.DAL{
-    public abstract class Livro
+namespace Amazonia.DAL.Entidades{
+    public abstract class Livro : Entidade
     {
-        public string Nome { get; set; }
         public decimal Preco { get; set; }
         public string Descricao { get; set; }
         public string Autor { get; set; }

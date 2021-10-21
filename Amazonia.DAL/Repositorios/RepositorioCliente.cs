@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using Amazonia.DAL.Entidades;
 
 namespace Amazonia.DAL.Repositorios{
 
@@ -22,13 +24,17 @@ namespace Amazonia.DAL.Repositorios{
 
         public void Apagar(Cliente obj)
         {
-            throw new System.NotImplementedException();
+             ListaClientes.Remove(obj);
         }
 
-        public Cliente Atualizar(Cliente obj)
+
+        public Cliente Atualizar(string nomeAntigo, string nomeNovo)
         {
-            throw new System.NotImplementedException();
+            var clienteTemporario = ObterPorNome(nomeAntigo);
+            clienteTemporario.Nome = nomeNovo;
+            return clienteTemporario;
         }
+
 
         public void Criar(Cliente obj)
         {
@@ -37,12 +43,44 @@ namespace Amazonia.DAL.Repositorios{
 
         public Cliente ObterPorNome(string Nome)
         {
-            throw new System.NotImplementedException();
+            var resultado = ListaClientes
+                                    .Where(x => x.Nome == Nome)
+                                    .OrderBy(x=>x.Idade)
+                                    .FirstOrDefault();
+            return resultado;
         }
 
         public List<Cliente> ObterTodos()
         {
             return ListaClientes;
         }
+
+        public List<Cliente> ObterTodosQueComecemPor(string comeco)
+        {
+            var resultado = ListaClientes
+                                .Where(x => x.Nome.StartsWith(comeco))
+                                .ToList();
+            return resultado;
+        }
+
+        public List<Cliente> ObterTodosQueTenhamPeloMenosXAnos(int idade)
+        {
+            System.Console.WriteLine("ObterTodosQueTenhamPeloMenosXAnos");
+            var resultado = ListaClientes
+                                .Where(x => x.Idade > idade)
+                                .ToList();
+            return resultado;
+        }
+
+        public List<string> ObterTodosNomesQueTenhamPeloMenosXAnos(int idade)
+        {
+            System.Console.WriteLine("ObterTodosNomesQueTenhamPeloMenosXAnos");
+            var resultado = ListaClientes
+                                .Where(x => x.Idade > idade)
+                                .Select(x => x.Nome.ToUpper())
+                                .ToList();
+            return resultado;
+        }
+
     }
 }

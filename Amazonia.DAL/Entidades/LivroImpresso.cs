@@ -1,4 +1,5 @@
-namespace Amazonia.DAL{
+namespace Amazonia.DAL.Entidades
+{
     public class LivroImpresso : Livro 
     {
         public int QuantidadePaginas {get; set;}
