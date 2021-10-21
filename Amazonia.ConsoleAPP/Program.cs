@@ -31,10 +31,6 @@ namespace Amazonia.ConsoleAPP
 
             }while(Console.ReadKey().Key != ConsoleKey.Tab);
 
-            foreach (var item in listaClientes)
-            {
-                Console.WriteLine(item);
-            }
 
             var listaClientesNovosEAntigos = repo.ObterTodos();
 
