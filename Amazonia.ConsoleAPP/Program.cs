@@ -13,9 +13,10 @@ namespace Amazonia.ConsoleAPP
             Console.WriteLine("Consulta do DB");
 
             var repo = new RepositorioCliente();
+            var repoLivros = new Repositoriolivro();
 
             // var listaClientes = repo.ObterTodos();
-             //var listaClientes = repo.ObterTodosQueComecemPor("M");
+            //var listaClientes = repo.ObterTodosQueComecemPor("M");
             var listaClientes =repo.ObterTodosQueTenhamPeloMenosXAnos(18);
             foreach (var item in listaClientes)
             {
@@ -62,6 +63,20 @@ namespace Amazonia.ConsoleAPP
             // {
             //     Console.WriteLine(item);
             // }
+
+            System.Console.WriteLine("---------------------[Todos os Livros]");
+            var listaLivros1 = repoLivros.ObterTodos();
+            foreach (var item in listaLivros1)
+            {
+                Console.WriteLine(item);
+            }
+
+            System.Console.WriteLine("---------------------[Livros em português]");
+            var listaLivros2 = repoLivros.ObterTodosPorIdioma(DAL.Idioma.Portugues);
+            foreach (var item in listaLivros2)
+            {
+                Console.WriteLine(item);
+            }
 
         }
     }
