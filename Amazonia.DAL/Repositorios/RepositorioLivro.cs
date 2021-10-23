@@ -13,7 +13,7 @@ namespace Amazonia.DAL.Repositorios{
             ListaLivros = new List<Livro>();
             ListaLivros.Add(new LivroImpresso(){ 
                 Nome = "Os Maias", 
-                Autor="EÁa Quiroz", 
+                Autor="E√ßa Quiroz", 
                 Descricao ="Romance", 
                 Idioma = Idioma.Portugues, 
                 Preco= 10.5m, 
@@ -22,7 +22,7 @@ namespace Amazonia.DAL.Repositorios{
             });
             ListaLivros.Add(new LivroDigital(){ 
                 Nome = "Lusiadas", 
-                Autor="Luiz Camıes", 
+                Autor="Luiz Cam√µes", 
                 Descricao ="Literatura", 
                 Idioma = Idioma.Portugues, 
                 Preco= 20m, 
@@ -32,7 +32,7 @@ namespace Amazonia.DAL.Repositorios{
             });
             ListaLivros.Add(new AudioLivro()
             {
-                Nome = "A falar È que a gente se entende",
+                Nome = "A falar √© que a gente se entende",
                 Autor = "Descponhecido",
                 Descricao = "bla bla bla",
                 Idioma = Idioma.Espanhol,

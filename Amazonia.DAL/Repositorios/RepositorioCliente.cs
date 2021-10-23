@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using Amazonia.DAL.Entidades;
+using Amazonia.DAL.Infraestrutura;
 
 namespace Amazonia.DAL.Repositorios{
 
-    public class RepositorioCliente : IRepositorio<Cliente>
+    public class RepositorioCliente : IRepositorio<Cliente> 
     {
 
         private List<Cliente> ListaClientes;
@@ -80,6 +81,11 @@ namespace Amazonia.DAL.Repositorios{
                                 .Select(x => x.Nome.ToUpper())
                                 .ToList();
             return resultado;
+        }
+
+        public void GerarRelatorio(IImpressora impressora)
+        {
+            impressora.Imprimir();
         }
 
     }

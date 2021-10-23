@@ -9,5 +9,11 @@ namespace Amazonia.DAL.Entidades{
             return base.ObterPreco() * 0.9M;
         }
 
+        public override string ToString()
+        {
+            return $"Livro Digital : {base.ToString()} InformacoesLicensa : {InformacoesLicensa}";
+        }   
+
+
     }
 }
