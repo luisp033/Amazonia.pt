@@ -9,11 +9,7 @@ namespace Amazonia.ConsoleAPP
     {
         static void Main(string[] args)
         {
-
-            //ListarClientes();
-
             ListarLivros();
-
         }
 
         public static void ListarLivros()
