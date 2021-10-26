@@ -6,7 +6,7 @@ namespace Amazonia.DAL.Repositorios{
 
     public class Repositoriolivro : IRepositorio<Livro>
     {
-        private List<Livro> ListaLivros;
+        private readonly List<Livro> ListaLivros;
 
         public Repositoriolivro()
         {
