@@ -40,6 +40,17 @@ namespace Amazonia.DAL.Repositorios{
                 DuracaoLivro = 30,
                 FornmatoFicheiro = "mp3"
             });
+            ListaLivros.Add(new AudioLivro()
+            {
+                Nome = "Mais um so para testar",
+                Autor = "Descponhecido",
+                Descricao = "bla bla bla",
+                Idioma = Idioma.Espanhol,
+                Preco = 20m,
+                DuracaoLivro = 30,
+                FornmatoFicheiro = "mp3"
+            });
+
 
         }
 
