@@ -107,24 +107,7 @@ namespace Amazonia.DAL.Tests
             Assert.IsTrue(livrosInicialmente > livrosDepoisDeApagar);
         }
 
-        [TestMethod]
-        public void MyTestMethodCreation()
-        {
-            var path = @"d:\temp_local\";
-            if (Directory.Exists(path) == false)
-            {
-                Directory.CreateDirectory(path);
-            }
-        }
-        [TestMethod]
-        public void MyTestMethodDelete()
-        {
-            var path = @"d:\temp_local\";
-            if (Directory.Exists(path))
-            {
-                Directory.Delete(path);
-            }
-        }
+        ///TDD (Teste Driven Development)
 
 
     }
