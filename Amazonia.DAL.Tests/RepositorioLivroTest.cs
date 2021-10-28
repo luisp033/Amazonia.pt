@@ -4,6 +4,7 @@ using Amazonia.DAL.Repositorios;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Amazonia.DAL.Tests
@@ -104,6 +105,25 @@ namespace Amazonia.DAL.Tests
 
             //Assert
             Assert.IsTrue(livrosInicialmente > livrosDepoisDeApagar);
+        }
+
+        [TestMethod]
+        public void MyTestMethodCreation()
+        {
+            var path = @"d:\temp_local\";
+            if (Directory.Exists(path) == false)
+            {
+                Directory.CreateDirectory(path);
+            }
+        }
+        [TestMethod]
+        public void MyTestMethodDelete()
+        {
+            var path = @"d:\temp_local\";
+            if (Directory.Exists(path))
+            {
+                Directory.Delete(path);
+            }
         }
 
 
