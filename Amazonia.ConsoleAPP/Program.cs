@@ -13,12 +13,10 @@ namespace Amazonia.ConsoleAPP
 
             var valorObtidoPeloMetodo = Exemplo.ObterValorDoConfig("chaveExemplo");
 
-
-
             var usarRegranovaStr = ConfigurationManager.AppSettings["regraNovaAtiva"];
             var usarRegranova = Convert.ToBoolean(usarRegranovaStr);
 
-            if (usarRegranova) 
+            if (!usarRegranova) 
             {
                 ListarClientes();
             }
@@ -38,7 +36,7 @@ namespace Amazonia.ConsoleAPP
             var listaLivros1 = repoLivros.ObterTodos();
             foreach (var item in listaLivros1)
             {
-                Console.WriteLine(item);
+                Console.WriteLine($"{item} Preço: {item.ObterPreco()}" );
             }
 
             System.Console.WriteLine("---------------------[Livros em português]");

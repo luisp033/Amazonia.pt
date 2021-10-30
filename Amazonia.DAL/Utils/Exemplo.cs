@@ -11,6 +11,10 @@ namespace Amazonia.DAL.Utils
     {
         public static string ObterValorDoConfig(string chave)
         {
+
+
+            var teste = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None).FilePath;
+
             var valorDaChave = ConfigurationManager.AppSettings[chave];
             return valorDaChave;
         }

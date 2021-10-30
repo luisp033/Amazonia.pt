@@ -53,6 +53,17 @@ namespace Amazonia.DAL.Repositorios{
                 FornmatoFicheiro = "mp3"
             });
 
+            var livroPeriodico = new LivroPeriodico()
+            {
+                Nome = "Revista Magazine",
+                Autor = "Marvel",
+                Descricao = "The end of the world",
+                Idioma = Idioma.Ingles,
+                Preco = 100m,
+                DataLancamento = new DateTime(2021,1,1)
+            };
+
+            ListaLivros.Add(livroPeriodico);
 
         }
 

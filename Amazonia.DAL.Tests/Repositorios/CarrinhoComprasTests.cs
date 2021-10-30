@@ -112,5 +112,32 @@ namespace Amazonia.DAL.Repositorios.Tests
             //Assert
             Assert.AreEqual(valorEsperado, valorObitidoDesconto);
         }
+
+        [TestMethod()]
+        public void CalcularPrecoCarrinhoLivrosPeriodicosTest()
+        {
+
+            //Arrange
+            var livrosFake = new List<Livro>();
+            livrosFake.Add(new LivroPeriodico { Preco = 10, Nome = "Periodico 01", DataLancamento = DateTime.Now.AddDays(-30) });
+            livrosFake.Add(new LivroPeriodico { Preco = 20, Nome = "Periodico 02", DataLancamento = DateTime.Now });
+
+            var clienteFake = new Cliente();
+            var carrinho = new CarrinhoCompras();
+
+            var valorEsperado = 29M;
+
+            //Act
+            carrinho.Cliente = clienteFake;
+            carrinho.Livros = livrosFake;
+            var valorObtido = carrinho.CalcularPreco();
+
+            //Assert
+            Assert.AreEqual(valorEsperado, valorObtido);
+
+        }
+
+
+
     }
 }
