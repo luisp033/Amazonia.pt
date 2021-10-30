@@ -14,20 +14,34 @@ namespace Amazonia.DAL.Entidades
         public override decimal ObterPreco()
         {
 
-            var valorRevistaPeriodicaDias = Exemplo.ObterValorDoConfig("revistaPeriodicaDescontoAPartirdeDias");
-            int DescontoAPartirdeDias;
-            bool importacaoDiaValido = Int32.TryParse(valorRevistaPeriodicaDias, out DescontoAPartirdeDias);
-
-            var valorRevistaPeriodicaDesconto = Exemplo.ObterValorDoConfig("revistaPeriodicaDescontoPercentagem");
-            decimal DescontoPercentagem;
-            bool importacaoDescontoValido = Decimal.TryParse(valorRevistaPeriodicaDesconto, out DescontoPercentagem);
-
+            var descontoAPartirdeDias = Exemplo.ObterValorDoConfig<int?>("revistaPeriodicaDescontoAPartirdeDias");
+            var descontoPercentagem = Exemplo.ObterValorDoConfig<decimal?>("revistaPeriodicaDescontoPercentagem");
             var diasAposLancamento = (DateTime.Now - DataLancamento).Days;
 
-            if (importacaoDiaValido && importacaoDescontoValido && diasAposLancamento > DescontoAPartirdeDias)
+            #region Sem utilizar o metodo dinamico
+            //var valorRevistaPeriodicaDias = Exemplo.ObterValorDoConfig("revistaPeriodicaDescontoAPartirdeDias");
+            //int DescontoAPartirdeDias;
+            //bool importacaoDiaValido = Int32.TryParse(valorRevistaPeriodicaDias, out DescontoAPartirdeDias);
+
+            //var valorRevistaPeriodicaDesconto = Exemplo.ObterValorDoConfig("revistaPeriodicaDescontoPercentagem");
+            //decimal DescontoPercentagem;
+            //bool importacaoDescontoValido = Decimal.TryParse(valorRevistaPeriodicaDesconto, out DescontoPercentagem); 
+
+            //if (importacaoDiaValido && importacaoDescontoValido && diasAposLancamento > DescontoAPartirdeDias)
+            //{
+            //    var preco = base.ObterPreco();
+            //    return preco - (preco * (DescontoPercentagem/100));
+            //}
+            //else
+            //{
+            //    return base.ObterPreco();
+            //}
+            #endregion
+
+            if (descontoAPartirdeDias.HasValue && descontoPercentagem.HasValue && diasAposLancamento > descontoAPartirdeDias)
             {
                 var preco = base.ObterPreco();
-                return preco - (preco * (DescontoPercentagem/100));
+                return preco - (preco * (descontoPercentagem.Value / 100));
             }
             else
             {
