@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using Amazonia.DAL.Entidades;
 using Amazonia.DAL.Repositorios;
 
@@ -9,7 +10,22 @@ namespace Amazonia.ConsoleAPP
     {
         static void Main(string[] args)
         {
-            ListarLivros();
+
+            //ListarClientes()
+
+            var usarRegranovaStr = ConfigurationManager.AppSettings["regraNovaAtiva"];
+            var usarRegranova = Convert.ToBoolean(usarRegranovaStr);
+
+            if (usarRegranova) 
+            {
+                ListarClientes();
+            }
+            else
+            {
+                ListarLivros();
+            }
+
+
         }
 
         public static void ListarLivros()
