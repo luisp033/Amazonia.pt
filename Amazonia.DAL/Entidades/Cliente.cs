@@ -23,8 +23,8 @@ namespace Amazonia.DAL.Entidades{
             if (NumeroIdentificacaoFiscal.ToCharArray().Distinct().ToList().Count == 1)
                 return false;
 
-            //var produtoSomatorio = 0;
-            //var fatorMultiplicacao = 2;
+            //var produtoSomatorio = 0
+            //var fatorMultiplicacao = 2
             //for (int i = NumeroIdentificacaoFiscal.Length-2; i > 0; i--)
             //{
             //    int elemento = Convert.ToInt32((NumeroIdentificacaoFiscal[i].ToString()));

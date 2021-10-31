@@ -11,14 +11,15 @@ namespace Amazonia.ConsoleAPP
         static void Main(string[] args)
         {
 
-            var valorObtidoPeloMetodo = Exemplo.ObterValorDoConfig("chaveExemplo");
-
+            
             var usarRegranovaStr = ConfigurationManager.AppSettings["regraNovaAtiva"];
             var usarRegranova = Convert.ToBoolean(usarRegranovaStr);
 
             if (!usarRegranova) 
             {
+                var valorObtidoPeloMetodo = Exemplo.ObterValorDoConfig("chaveExemplo");
                 ListarClientes();
+                Console.WriteLine(valorObtidoPeloMetodo);
             }
             else
             {
@@ -54,8 +55,8 @@ namespace Amazonia.ConsoleAPP
             var repo = new RepositorioCliente();
             
 
-            // var listaClientes = repo.ObterTodos();
-            //var listaClientes = repo.ObterTodosQueComecemPor("M");
+            // var listaClientes = repo.ObterTodos()
+            //var listaClientes = repo.ObterTodosQueComecemPor("M")
             var listaClientes = repo.ObterTodosQueTenhamPeloMenosXAnos(18);
             foreach (var item in listaClientes)
             {
@@ -85,22 +86,22 @@ namespace Amazonia.ConsoleAPP
                 Console.WriteLine(item);
             }
 
-            // Console.WriteLine("Criacao de novos cliente no DB");
+            // Console.WriteLine("Criacao de novos cliente no DB")
             // do{
-            //     var novoCliente = new Cliente();
+            //     var novoCliente = new Cliente()
 
-            //     Console.Write("Informe Nome:");
-            //     novoCliente.Nome = Console.ReadLine();
-            //     repo.Criar(novoCliente);
+            //     Console.Write("Informe Nome:")
+            //     novoCliente.Nome = Console.ReadLine()
+            //     repo.Criar(novoCliente)
 
-            // }while(Console.ReadKey().Key != ConsoleKey.Tab);
+            // }while(Console.ReadKey().Key != ConsoleKey.Tab)
 
 
-            // var listaClientesNovosEAntigos = repo.ObterTodos();
+            // var listaClientesNovosEAntigos = repo.ObterTodos()
 
             // foreach (var item in listaClientesNovosEAntigos)
             // {
-            //     Console.WriteLine(item);
+            //     Console.WriteLine(item)
             // }
 
         }
