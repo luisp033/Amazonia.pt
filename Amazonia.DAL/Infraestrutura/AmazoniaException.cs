@@ -6,9 +6,8 @@ namespace Amazonia.DAL.Infraestrutura
 {
  
     [Serializable]
-    public class AmazoniaException : Exception
+    public class AmazoniaException : Exception, ISerializable
     {
-
         protected AmazoniaException(SerializationInfo info, StreamingContext context)
         {
         }
