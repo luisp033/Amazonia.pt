@@ -22,7 +22,7 @@ namespace Amazonia.DAL.Entidades{
 
             if (NumeroIdentificacaoFiscal.ToCharArray().Distinct().ToList().Count == 1)
                 return false;
-
+            /*
             //var produtoSomatorio = 0
             //var fatorMultiplicacao = 2
             //for (int i = NumeroIdentificacaoFiscal.Length-2; i > 0; i--)
@@ -42,6 +42,7 @@ namespace Amazonia.DAL.Entidades{
             //{
             //    return (11 - restoDivisaoPor11) == Convert.ToInt32((NumeroIdentificacaoFiscal[8].ToString()));
             //}
+            */
 
             return true;
         }

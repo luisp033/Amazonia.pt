@@ -1,6 +1,6 @@
 namespace Amazonia.DAL.Infraestrutura //TODO: Remover impressora desse Projecto
 {
-    public class ImpressoraPDF : IImpressora
+    public class ImpressoraPdf : IImpressora
     {
         public void Imprimir()
         {

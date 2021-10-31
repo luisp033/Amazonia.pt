@@ -8,7 +8,7 @@ namespace Amazonia.DAL.Repositorios{
     public class RepositorioCliente : IRepositorio<Cliente> 
     {
 
-        private List<Cliente> ListaClientes;
+        private readonly List<Cliente> ListaClientes;
 
         public RepositorioCliente()
         {
@@ -83,7 +83,7 @@ namespace Amazonia.DAL.Repositorios{
             return resultado;
         }
 
-        public void GerarRelatorio(IImpressora impressora)
+        public static void GerarRelatorio(IImpressora impressora)
         {
             impressora.Imprimir();
         }

@@ -6,7 +6,7 @@ using Amazonia.DAL.Utils;
 
 namespace Amazonia.ConsoleAPP
 {
-    class Program
+    public static class Program
     {
         static void Main(string[] args)
         {
@@ -78,7 +78,7 @@ namespace Amazonia.ConsoleAPP
 
             System.Console.WriteLine("---------------------");
 
-            var clienteNovo = repo.Atualizar("Maria", "Joao da Silva");
+            //var clienteNovo = repo.Atualizar("Maria", "Joao da Silva")
 
             var listaClientes3 = repo.ObterTodos();
             foreach (var item in listaClientes3)
@@ -86,23 +86,7 @@ namespace Amazonia.ConsoleAPP
                 Console.WriteLine(item);
             }
 
-            // Console.WriteLine("Criacao de novos cliente no DB")
-            // do{
-            //     var novoCliente = new Cliente()
 
-            //     Console.Write("Informe Nome:")
-            //     novoCliente.Nome = Console.ReadLine()
-            //     repo.Criar(novoCliente)
-
-            // }while(Console.ReadKey().Key != ConsoleKey.Tab)
-
-
-            // var listaClientesNovosEAntigos = repo.ObterTodos()
-
-            // foreach (var item in listaClientesNovosEAntigos)
-            // {
-            //     Console.WriteLine(item)
-            // }
 
         }
 

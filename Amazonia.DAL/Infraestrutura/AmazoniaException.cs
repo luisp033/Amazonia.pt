@@ -9,7 +9,7 @@ namespace Amazonia.DAL.Infraestrutura
         {
 
             var path = @"d:\temp\";
-            if (Directory.Exists(path) == false)
+            if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }

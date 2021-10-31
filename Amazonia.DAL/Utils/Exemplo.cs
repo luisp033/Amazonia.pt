@@ -66,7 +66,6 @@ namespace Amazonia.DAL.Utils
                 }
             }
 
-            //return (T)Convert.ChangeType(result, default(T).GetType());
             return result;
         }
 
