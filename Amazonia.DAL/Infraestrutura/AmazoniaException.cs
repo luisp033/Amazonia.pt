@@ -5,13 +5,8 @@ using System.Runtime.Serialization;
 namespace Amazonia.DAL.Infraestrutura
 {
  
-    [Serializable]
-    public class AmazoniaException : Exception, ISerializable
+    public class AmazoniaException : Exception
     {
-        protected AmazoniaException(SerializationInfo info, StreamingContext context)
-        {
-        }
-
         public AmazoniaException(string tipoErro) 
         {
 
