@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.Serialization;
 
 namespace Amazonia.DAL.Infraestrutura
 {
@@ -7,6 +8,11 @@ namespace Amazonia.DAL.Infraestrutura
     [Serializable]
     public class AmazoniaException : Exception
     {
+
+        protected AmazoniaException(SerializationInfo info, StreamingContext context)
+        {
+        }
+
         public AmazoniaException(string tipoErro) 
         {
 

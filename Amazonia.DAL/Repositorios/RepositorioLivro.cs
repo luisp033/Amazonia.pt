@@ -89,9 +89,8 @@ namespace Amazonia.DAL.Repositorios{
 
         public Livro ObterPorNome(string Nome)
         {
-            var resultado = ListaLivros
-                                    .Where(x => x.Nome == Nome)
-                                    .FirstOrDefault();
+            var resultado = ListaLivros.FirstOrDefault(x => x.Nome == Nome);
+                                      
             return resultado;
         }
 
