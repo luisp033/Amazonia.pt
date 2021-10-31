@@ -69,7 +69,7 @@ namespace Amazonia.DAL.Repositorios{
 
         public void Apagar(Livro obj)
         {
-            if (ListaLivros.Remove(obj) == false)
+            if (!ListaLivros.Remove(obj))
             {
                 throw new AmazoniaException("Falha ao apagar Livro");
             }

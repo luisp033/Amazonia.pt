@@ -3,6 +3,8 @@ using System.IO;
 
 namespace Amazonia.DAL.Infraestrutura
 {
+ 
+    [Serializable]
     public class AmazoniaException : Exception
     {
         public AmazoniaException(string tipoErro) 
