@@ -24,10 +24,7 @@ namespace Amazonia.DAL.Entidades
         {
 
             var descontoAPartirdeDias = Exemplo.ObterValorDoConfig<int?>("revistaPeriodicaDescontoAPartirdeDias");
-
-
             var descontoPercentagem = Exemplo.ObterValorDoConfig<decimal?>("revistaPeriodicaDescontoPercentagem");
-
 
             var diasAposLancamento = (DateTime.Now - DataLancamento).Days;
 

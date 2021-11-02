@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Amazonia.DAL.Desconto;
 using Amazonia.DAL.Entidades;
 
 namespace Amazonia.DAL.Repositorios{
@@ -7,7 +8,10 @@ namespace Amazonia.DAL.Repositorios{
 
         decimal CalcularPreco();
 
-        decimal AplicarDesconto(decimal valorDesconto); // TODO> Criar Regra Desconto
+        //comentado apenas para guardar o exemplo
+        //decimal AplicarDesconto(decimal valorDesconto); 
+
+        decimal AplicarDesconto(IDesconto tipoDeDesconto); 
 
     }
 }
