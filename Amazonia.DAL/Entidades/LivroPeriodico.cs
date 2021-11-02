@@ -11,11 +11,24 @@ namespace Amazonia.DAL.Entidades
     {
         public DateTime DataLancamento { get; set; }
 
+        public LivroPeriodico()
+        {
+            if (DataLancamento == new DateTime()) 
+            {
+                DataLancamento = DateTime.Today;
+            }
+        }
+
+
         public override decimal ObterPreco()
         {
 
             var descontoAPartirdeDias = Exemplo.ObterValorDoConfig<int?>("revistaPeriodicaDescontoAPartirdeDias");
+
+
             var descontoPercentagem = Exemplo.ObterValorDoConfig<decimal?>("revistaPeriodicaDescontoPercentagem");
+
+
             var diasAposLancamento = (DateTime.Now - DataLancamento).Days;
 
             #region Sem utilizar o metodo dinamico
