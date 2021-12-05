@@ -11,6 +11,7 @@ namespace Amazonia.DAL.Entidades.Tests
     [TestClass()]
     public class ClienteTests
     {
+        /*
         [TestMethod()]
         public void NifEstaValidoTest()
         {
@@ -70,6 +71,6 @@ namespace Amazonia.DAL.Entidades.Tests
 
             Assert.IsTrue(nifValido);
         }
-
+       */
     }
 }
